@@ -1,0 +1,69 @@
+mysql> USE mysql;
+Database changed
+mysql> describe STUDENT;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| Reg_no    | int(11)     | YES  |     | NULL    |       |
+| Name      | varchar(15) | YES  |     | NULL    |       |
+| Gender    | char(1)     | YES  |     | NULL    |       |
+| DOB       | date        | YES  |     | NULL    |       |
+| Mobile_no | int(11)     | YES  |     | NULL    |       |
+| City      | char(15)    | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6 rows in set (0.02 sec)
+
+mysql> describe FACULTY;
++-----------+----------+------+-----+---------+-------+
+| Field     | Type     | Null | Key | Default | Extra |
++-----------+----------+------+-----+---------+-------+
+| Fac_no    | int(11)  | YES  |     | NULL    |       |
+| Fac_name  | char(15) | YES  |     | NULL    |       |
+| Gender    | char(1)  | YES  |     | NULL    |       |
+| DOB       | date     | YES  |     | NULL    |       |
+| DOJ       | date     | YES  |     | NULL    |       |
+| Mobile_no | int(11)  | YES  |     | NULL    |       |
++-----------+----------+------+-----+---------+-------+
+6 rows in set (0.02 sec)
+
+mysql> describe DEPARTMENT;
++-----------+----------+------+-----+---------+-------+
+| Field     | Type     | Null | Key | Default | Extra |
++-----------+----------+------+-----+---------+-------+
+| Dept_no   | char(4)  | YES  |     | NULL    |       |
+| Dept_name | char(15) | YES  |     | NULL    |       |
+| Dept_head | char(4)  | YES  |     | NULL    |       |
++-----------+----------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> describe COURSE;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| Course_no   | int(11)  | YES  |     | NULL    |       |
+| Course_des  | char(14) | YES  |     | NULL    |       |
+| Course_type | char(1)  | YES  |     | NULL    |       |
+| Sem_no      | char(1)  | YES  |     | NULL    |       |
+| Hall_no     | char(4)  | YES  |     | NULL    |       |
+| Fac_no      | char(4)  | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+mysql> ALTER TABLE FACULTY
+    -> ADD Deptno VARCHAR(4);
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> describe FACULTY;
++-----------+------------+------+-----+---------+-------+
+| Field     | Type       | Null | Key | Default | Extra |
++-----------+------------+------+-----+---------+-------+
+| Fac_no    | int(11)    | YES  |     | NULL    |       |
+| Fac_name  | char(15)   | YES  |     | NULL    |       |
+| Gender    | char(1)    | YES  |     | NULL    |       |
+| DOB       | date       | YES  |     | NULL    |       |
+| DOJ       | date       | YES  |     | NULL    |       |
+| Mobile_no | int(11)    | YES  |     | NULL    |       |
+| Deptno    | varchar(4) | YES  |     | NULL    |       |
++-----------+------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
